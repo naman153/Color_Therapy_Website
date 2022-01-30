@@ -1,0 +1,80 @@
+<DOCTYPE html>
+    {% load static %}
+    {% block content %}
+    <html lang="en">
+    <head>
+    
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Related Queries </title>
+        <link rel="stylesheet" href="{% static 'css/main.css'%}"> 
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="{% url 'home' %}"><img src="{% static 'images/logo.jpeg' %}" width="125px"></a>
+                </div>
+                <nav>
+                    <ul id="MenuItems">
+                        <li><a href="{% url 'Contact'%}">Contact Us</a></li>
+                    </ul>
+                </nav>
+                
+            </div>
+        </div>
+        <div class="small-container">
+    
+    
+            <div class="row row-2">
+                <h2>Related Queries</h2>
+                <select onchange="location = this.value;"> 
+                    <option> Select Category </option>
+                    {% for feed in feeds %}
+                        <div class="col-3">
+                            <option value="{% url 'Category' feed.name %}"> {{feed.name}} </option>
+                        </div>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="small-container">
+                {% for image in images %}
+                    <h2 class="title"> {{image.name}} </h2>
+                {% endfor %}
+                
+                <div class="row">
+    
+                    {% for image in images %}
+                    <div class="col-4">
+                        <div class="col-4">
+                            <img src="{% static '{{image.image}}' %}" width="250px"  height="150px">
+                            <h4><strong> {{image.message}} </strong></h4>
+                        </div>
+                        
+                    </div> 
+                    {% endfor %}
+    
+                </div>
+            </div>
+            {% comment %} <div class="row">
+
+                
+                   
+                
+            </div> {% endcomment %}
+
+    
+    
+           
+        </div>
+    
+    
+        
+    
+    </body>
+    
+    {% endblock content %}
+    </html>

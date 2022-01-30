@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load static %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}"> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="header" >
+        <div class="container" style="background-color:white;">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="{% url 'home' %}"><img src="{% static 'images/logo.jpeg' %}" width="125px"></a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <br>
+    <h2 class="title">Contact Us</h2>
+    <br>
+
+    <div>
+        <a href="https://api.whatsapp.com/send?phone=+91 9027 471516&text=%20My%20Problems%20are:%0a">
+            
+            <button class="btn btn-success btn-block" style="font-size:40px"> <i class="fa fa-whatsapp" style="font-size:42px;color:green"></i> Click Here &#8594;</button>
+        </a>
+    </div>
+    
+
+
+
+</body>
+</html>
+{% endblock content %}

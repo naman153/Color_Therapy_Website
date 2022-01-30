@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load static %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vedic Science Medical</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}"> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="header" >
+        <div class="container" style="background-color:white;">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="{% url 'home' %}"><img src="{% static 'images/logo.jpeg' %}" width="125px"></a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <br>
+    <h2 class="title">Feedback</h2>
+    <br>
+
+    
+        
+    <div class="form-container" style=" height:320px; width:525px; background-color: #ffd6d6 ">
+        
+        <form method="POST" style="position:static; max-width:500px; ">
+            {% csrf_token %}
+            <select name="name" id="name">
+                {% for feed in feeds %}
+                    <option value={{feed.name}}>{{feed.name}}</option>
+                {% endfor %}
+            </select>
+            <br>
+            Upload Your Image<input type="file" alt="Submit"  name="images" >
+            <textarea type="text" placeholder="Message" name="message"style="height:100px; width:460px;"></textarea>
+            <button type="submit" class="btn">Submit</button>
+        </form>
+        
+    </div>
+</body>
+</html>
+{% endblock content %}

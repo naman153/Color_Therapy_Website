@@ -1,0 +1,101 @@
+<DOCTYPE html>
+{% load static %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VEDIC SCIENCE MEDICAL</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}"> 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+
+    
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="{% url 'home' %}"><img src="{% static 'images/logo.jpeg' %}" width="250px"  height="150px"> </a>
+                </div>
+                <nav>
+                    <ul id="MenuItems">
+                        <li><a href="{% url 'Contact' %}">Contact Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <h1>Color Therapy Treatment<br>Inspiring Youths</h1>
+                    <p>"In the modern world of business, it is necessary to understand and get <br>reminded of our ancient recovery methods that our ancestors used.” </p>
+                </div>
+                <div class="col-2">
+                    <img src="{%static 'images/cover.jpg' %}" >
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!----------Testimonial---------->
+    <div class="testimonial">
+        <div class="small-container">
+            <h2 class="title"> Problems </h2>
+            <div class="row">
+
+                {% for feed in feeds %}
+                <div class="col-3">
+                    <a href="{% url 'Category' feed.name  %}"><p> {{feed.name}}</p></a>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+
+    <!--------------footer-------------->
+    <div class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3> Download Our App</h3>
+                    <p>Download App for Android and IOS Smartphones.</p>
+                    <div class="app-logo">
+                        <img src="{% static 'images/play-store.png' %}">
+                        <img src="{% static 'images/app-store.png' %}">
+                    </div>
+                </div>
+                <div class="footer-col-2">
+                    <img src="{% static 'images/logo.jpeg' %}">
+                </div>
+                <div class="footer-col-3">
+                    <h3> Useful Links</h3>
+                    <ul>
+                        <li>Coupons</li>
+                        <li>Blog Post</li>
+                        <li>Return Policy</li>
+                        <li>Join Affiliate</li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3> Follow Us</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>Instagram</li>
+                        <li>Youtube</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">Copyright 2022 -Naman Gupta</p>
+        </div>
+    </div>
+
+    
+
+
+</body>
+{% endblock content %}
+</html>
