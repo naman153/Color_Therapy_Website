@@ -9,8 +9,9 @@ from .models import *
 
 def category(request, slug ):
     feeds = Feedback.objects.all()
-    images = Product.objects.filter(name=slug)
-    context= {'feeds':feeds, 'images':images}
+    i=slug
+    ims = Product.objects.filter(name=slug)
+    context= {'feeds':feeds, 'ims':ims,'i':i}
     return render(request, 'main\Category.html', context)
 
 def index(request):

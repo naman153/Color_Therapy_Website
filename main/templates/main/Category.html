@@ -40,31 +40,21 @@
                 </select>
             </div>
 
-            <div class="small-container">
-                {% for image in images %}
-                    <h2 class="title"> {{image.name}} </h2>
-                {% endfor %}
-                
-                <div class="row">
-    
-                    {% for image in images %}
-                    <div class="col-4">
-                        <div class="col-4">
-                            <img src="{% static '{{image.image}}' %}" width="250px"  height="150px">
-                            <h4><strong> {{image.message}} </strong></h4>
-                        </div>
-                        
-                    </div> 
-                    {% endfor %}
-    
+            <div class="testimonials">
+                <div class="small-container">
+                    <h2 class="title"> {{i}} </h2>
+                    <div class="row">
+                        {% for im in ims %}
+                            <div class="col-4">
+                                <a href=''> <img src="{% static im.image.url %}" ></a>
+                                <h4><strong> {{im.message}} </strong></h4>
+                            </div>
+                        {% endfor %}
+                    </div>
                 </div>
+    
+                
             </div>
-            {% comment %} <div class="row">
-
-                
-                   
-                
-            </div> {% endcomment %}
 
     
     
