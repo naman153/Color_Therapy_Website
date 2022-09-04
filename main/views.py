@@ -29,7 +29,10 @@ def feedback(request):
     return render(request, 'main\Feedback.html')
 
 def admin1(request):
-    return render(request, 'main\Admin1.html')
+    feeds = Feedback.objects.all()
+	
+    context = {'feeds':feeds}
+    return render(request, 'main\Admin1.html', context)
 
 def add_image(request):
     feeds = Feedback.objects.all()

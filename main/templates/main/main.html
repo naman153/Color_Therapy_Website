@@ -46,7 +46,7 @@
 
                 {% for feed in feeds %}
                 <div class="col-3">
-                    <a href="{% url 'Category' feed.name  %}"><p> {{feed.name}}</p></a>
+                    <a href="{% url 'Category' feed.name  %}"><p><strong> {{feed.name| upper}}</strong></p></a>
                 </div>
                 {% endfor %}
 

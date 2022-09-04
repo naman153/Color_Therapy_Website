@@ -64,11 +64,11 @@
             <br><br>
             <div class="row">
 
-                {% comment %} {% for feed in feeds %} {% endcomment %}
+                {% for feed in feeds %}
                 <div class="col-3">
-                    <p>{{feed.message}}</p>
+                    <a href="{% url 'Category' feed.name  %}"><p> {{feed.name}}</p></a>
                 </div>
-                {% comment %} {% endfor %} {% endcomment %}
+                {% endfor %}
 
             </div>
         </div>
